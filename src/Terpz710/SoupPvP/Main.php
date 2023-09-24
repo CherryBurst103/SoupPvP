@@ -17,7 +17,7 @@ class Main extends PluginBase implements Listener {
         $player = $event->getPlayer();
         $item = $event->getItem();
 
-        if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_AIR || $event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK) {
+        if ($event->getAction() ===  PlayerInteractEvent::RIGHT_CLICK_BLOCK) {
             if ($event->getItem() instanceof \pocketmine\item\MushroomStew) {
                 $event->cancel();
                 $player->setHealth($player->getHealth() + 4);
