@@ -17,6 +17,7 @@ class Main extends PluginBase implements Listener {
 
         if ($event->getItem() instanceof \pocketmine\item\MushroomStew) {
             $event->cancel();
+            $player->sendMessage("Healed §b4§r total hearts!");
             $player->setHealth($player->getHealth() + 4);
         }
     }
