@@ -14,11 +14,9 @@ class Main extends PluginBase implements Listener {
 
     public function onPlayerItemConsume(PlayerItemConsumeEvent $event) {
         $player = $event->getPlayer();
-        
-        if ($event->getItem()->getId() === Item::MUSHROOM_STEW) {
-            
-            $event->cancel();
 
+        if ($event->getItem() instanceof \pocketmine\item\MushroomStew) {
+            $event->setCancelled();
             $player->setHealth($player->getHealth() + 4);
         }
     }
